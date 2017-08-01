@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <form data-bind="submit: addItem">
+            NewItem:
+            <input type="text" data-bind="value: newItem, valueUpdate: 'afterkeydown'">
+            <button type="submit" data-bind="enable: newItem().length > 0">Add</button>
+        </form>
+        <p>Your items:</p>
+        <select multiple="multiple" width="50" data-bind="options: items"></select>
+    </div>
+    <script src="../../vendor/knockout-3.4.2.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -8,20 +8,27 @@ var livereload = require('gulp-livereload');
 
 // 编译less
 gulp.task('less', () => {
-    gulp.src('src/styles/*.less')
+    gulp.src('src/*/*.less')
         .pipe(less())
-        .pipe(gulp.dest('dist/styles'))
+        .pipe(gulp.dest('dist'))
         .pipe(livereload());
 });
 
 // 编译es6
 gulp.task('es6', () => {
-    gulp.src('src/js/*.js')
+    gulp.src('src/*/*.js')
         .pipe(babel())
-        .pipe(gulp.dest('dist/js'))
+        .pipe(gulp.dest('dist'))
         .pipe(uglify())
         .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('dist/js'))
+        .pipe(gulp.dest('dist'))
+        .pipe(livereload());
+});
+
+// 拷贝 html
+gulp.task('html', () => {
+    gulp.src('src/*/*.html')
+        .pipe(gulp.dest('dist'))
         .pipe(livereload());
 });
 
@@ -35,6 +42,7 @@ gulp.task('eslint', () => {
 // watch 任务
 gulp.task('default', () => {
     livereload.listen();
-    gulp.watch('src/js/**.js', ['es6']);
-    gulp.watch('src/styles/*.less', ['less']);
+    gulp.watch('src/*/*.html', ['html']);
+    gulp.watch('src/*/*.js', ['es6']);
+    gulp.watch('src/*/*.less', ['less']);
 });
