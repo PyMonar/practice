@@ -1,6 +1,6 @@
 let myViewModel = {
-    personName: 'Bob',
-    personAge: 20
+    personName: ko.observable('Sandy'),
+    personAge: ko.observable(21)
 };
 
 ko.applyBindings(myViewModel);
