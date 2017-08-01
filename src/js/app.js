@@ -1,5 +1,6 @@
-let a = num => console.log(`The result is ${num}.`);
+let myViewModel = {
+    personName: 'Bob',
+    personAge: 20
+};
 
-let foo = x => x * x;
-
-a(foo(2));
+ko.applyBindings(myViewModel);
