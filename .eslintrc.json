@@ -21,7 +21,7 @@
             "windows"
         ],
         "quotes": [
-            "error",
+            "off",
             "single"
         ],
         "semi": [
