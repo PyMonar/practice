@@ -4,8 +4,6 @@
 
 This is a record to practise knockout.js.
 
----
-
 ### list
 - [x] [1.数组绑定](https://github.com/PyMonar/practice/tree/master/src/1-array)
 - [x] [2.计算属性](https://github.com/PyMonar/practice/tree/master/src/2-computed)
