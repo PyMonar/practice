@@ -10,8 +10,7 @@ var livereload = require('gulp-livereload');
 gulp.task('less', () => {
     gulp.src('src/*/*.less')
         .pipe(less())
-        .pipe(gulp.dest('dist'))
-        .pipe(livereload());
+        .pipe(gulp.dest('dist'));
 });
 
 // 编译es6
@@ -21,15 +20,13 @@ gulp.task('es6', () => {
         .pipe(gulp.dest('dist'))
         .pipe(uglify())
         .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('dist'))
-        .pipe(livereload());
+        .pipe(gulp.dest('dist'));
 });
 
 // 拷贝 html
 gulp.task('html', () => {
     gulp.src('src/*/*.html')
-        .pipe(gulp.dest('dist'))
-        .pipe(livereload());
+        .pipe(gulp.dest('dist'));
 });
 
 // eslint 检查语法
@@ -39,10 +36,17 @@ gulp.task('eslint', () => {
         .pipe(eslint.format());
 });
 
+// livereload
+gulp.task('livereload', () => {
+    gulp.src('dist/*/**')
+        .pipe(livereload());
+});
+
 // watch 任务
-gulp.task('default', () => {
+gulp.task('default', ['html', 'less', 'es6'], () => {
     livereload.listen();
     gulp.watch('src/*/*.html', ['html']);
     gulp.watch('src/*/*.js', ['es6']);
     gulp.watch('src/*/*.less', ['less']);
+    gulp.watch('dist/*/**', ['livereload']);
 });
