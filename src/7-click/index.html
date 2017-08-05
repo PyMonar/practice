@@ -10,7 +10,12 @@
 
 <body>
     <div id="app">
-
+        <ul data-bind="foreach: fruits">
+            <li data-bind="text: $data.name, click: $parent.show.bind($data, 'param!')"></li>
+        </ul>
+        <p data-bind="with: selected">
+            You have clicked: <span data-bind="text: name"></span> and its price is <span data-bind="text: price"></span>.
+        </p>
     </div>
     <script src="../../vendor/knockout-3.4.2.js"></script>
     <script src="app.js"></script>
