@@ -13,3 +13,4 @@ This is a record to practise knockout.js.
 - [x] [6.控制流绑定](https://github.com/PyMonar/practice/tree/master/src/6-control-flow)
 - [x] [7.点击绑定](https://github.com/PyMonar/practice/tree/master/src/7-click)
 - [x] [8.表单绑定](https://github.com/PyMonar/practice/tree/master/src/8-form-bind)
+- [x] [9.下拉绑定](https://github.com/PyMonar/practice/tree/master/src/9-select)
