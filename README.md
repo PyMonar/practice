@@ -12,3 +12,4 @@ This is a record to practise knockout.js.
 - [x] [5.文本与样式绑定](https://github.com/PyMonar/practice/tree/master/src/5-bind-text-style)
 - [x] [6.控制流绑定](https://github.com/PyMonar/practice/tree/master/src/6-control-flow)
 - [x] [7.点击绑定](https://github.com/PyMonar/practice/tree/master/src/7-click)
+- [x] [8.表单绑定](https://github.com/PyMonar/practice/tree/master/src/8-form-bind)

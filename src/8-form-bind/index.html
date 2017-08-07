@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>
+            Your Name(Normal input): <input type="text" data-bind="value: name">
+            <br>Your Name(ex:textInput): <input data-bind="textInput: name" />
+        </p>
+        <p>
+            Click to edit: <span data-bind="text: name, visible: !editing(), click: edit"></span>
+            <input type="text" data-bind="visible: editing, hasFocus: editing, value: name">
+        </p>
+        <p>
+            Show Detail:
+            <br> Your Name: <span data-bind="text: name"></span>
+        </p>
+        <p>
+            <!-- ko foreach: fruits  -->
+            <input type="checkbox" data-bind="value: $data.name, checked: $root.selected" /> <span data-bind="text: $data.name"></span>
+            <!-- /ko  -->
+            <br> You have chosen:
+            <br>
+            <!-- ko foreach: selected  -->
+            <span data-bind="text: $data"></span>
+            <br>
+            <!-- /ko  -->
+        </p>
+
+        <p>
+            <!-- ko foreach: fruits  -->
+            <input type="radio" name="fruit" data-bind="checkedValue: $data, checked: $root.selectedObj" /> <span data-bind="text: $data.name"></span>
+            <!-- /ko  -->
+            <br> You have chosen:
+            <br>
+            <span data-bind="text: ko.toJSON(selectedObj, null, 2)"></span>
+            <br>
+        </p>
+    </div>
+    <script src="../../vendor/knockout-3.4.2.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
